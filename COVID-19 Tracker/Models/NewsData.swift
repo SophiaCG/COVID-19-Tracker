@@ -48,11 +48,9 @@ extension Article: Displayable {
 //MARK: - Results
 
 struct Articles: Decodable {
-    let totalResults: Int
     let all: [Article]
     
     enum CodingKeys: String, CodingKey {
-        case totalResults
         case all = "articles"
     }
 }
