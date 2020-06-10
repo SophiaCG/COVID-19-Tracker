@@ -34,7 +34,7 @@ extension Article: Displayable {
     var titleLabelText: String {
         title
     }
-    
+
     var subtitleLabelText: String {
         description
     }

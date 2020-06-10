@@ -6,5 +6,6 @@ target 'COVID-19 Tracker' do
   use_frameworks!
 
 pod 'Alamofire', '~> 5.2.1'
+pod 'Charts'
 
 end

@@ -54,7 +54,7 @@ class NewsController: UITableViewController {
 
 extension NewsController {
     func fetchNews() {
-        AF.request("https://newsapi.org/v2/everything?q=coronavirus&q=covid19&q=covid-19&apiKey=dee142a160b4462b9258ac52eaf98161").validate().responseDecodable(of: Articles.self) { (response) in
+        AF.request("http://newsapi.org/v2/everything?q=coronavirus&sortBy=popularity&apiKey=dee142a160b4462b9258ac52eaf98161").validate().responseDecodable(of: Articles.self) { (response) in
             guard let articles = response.value else { return }
             self.articles = articles.all
             self.items = articles.all
