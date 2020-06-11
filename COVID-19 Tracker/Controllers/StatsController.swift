@@ -38,21 +38,23 @@ class StatsController: UIViewController {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        
+        UISearchBar.appearance().barTintColor = #colorLiteral(red: 0.0705749318, green: 0.07059573382, blue: 0.07057518512, alpha: 1)
+        UISearchBar.appearance().tintColor = .white
+
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-            textField.backgroundColor = .black
-            textField.textColor = .gray
-            
+            textField.backgroundColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+            textField.textColor = .white
+            textField.tintColor = .white
+
             let backgroundView = textField.subviews.first
             if #available(iOS 11.0, *) {
-                backgroundView?.backgroundColor = UIColor.black
+                backgroundView?.backgroundColor = UIColor.white.withAlphaComponent(0.3)
                 backgroundView?.subviews.forEach({ $0.removeFromSuperview() })
             }
             backgroundView?.layer.cornerRadius = 10.5
             backgroundView?.layer.masksToBounds = true
         }
-        
-        print("To the global summary!")
+
         fetchSummary()
     }
 }
@@ -64,7 +66,7 @@ extension StatsController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard var countryName = searchBar.text else { return }
-        self.navigationItem.title = "\(countryName) Stats"
+        self.navigationItem.title = "\(countryName)"
         countryName = countryName.lowercased()
         
         if countryName == "us" || countryName == "united states" || countryName == "united states of america" {
@@ -74,7 +76,6 @@ extension StatsController: UISearchBarDelegate {
         }
         
         searchBar.endEditing(true)
-        
         searchCountry(for: countryName)
     }
         
@@ -92,7 +93,7 @@ extension StatsController {
     
     func fetchSummary() {
         
-        self.navigationItem.title = "Global Stats"
+        self.navigationItem.title = "Global"
         let request = AF.request("https://api.quarantine.country/api/v1/summary/latest")
         request.responseDecodable(of: All.self) { (response) in
             guard let summary = response.value else { return }
