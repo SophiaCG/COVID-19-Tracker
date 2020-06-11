@@ -419,27 +419,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="NSu-9d-TkW" kind="relationship" relationship="viewControllers" id="ZYq-rm-Ed7"/>
-                        <segue destination="jBh-U7-w9r" kind="relationship" relationship="viewControllers" id="sdT-eX-YKf"/>
                         <segue destination="yBp-np-Sba" kind="relationship" relationship="viewControllers" id="XXQ-FG-thE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz7-7e-Xjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="415.94202898550731" y="118.52678571428571"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="k4n-vK-RuM">
-            <objects>
-                <navigationController id="jBh-U7-w9r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="XxC-vb-PTy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gOj-1F-ZL3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WoO-dG-pdn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="416" y="846"/>
         </scene>
         <!--Charts-->
         <scene sceneID="mxl-wO-8eN">
@@ -468,7 +453,6 @@
     </scenes>
     <resources>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
-        <image name="map.fill" catalog="system" width="128" height="113"/>
         <image name="safari.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
